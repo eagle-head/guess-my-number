@@ -1,25 +1,24 @@
 import React, { FC, type PropsWithChildren } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable, StyleSheet, GestureResponderEvent } from "react-native";
 
-const PrimaryButton: FC<PropsWithChildren> = ({ children }) => {
-  let num: number = 0;
-  const pressHandle = () => {
-    console.log("Pressed!", ++num);
-  };
+import Colors from "../../../constants/colors";
 
+interface IPrimaryButton {
+  onPress: ((event: GestureResponderEvent) => void) | null | undefined;
+}
+
+export const PrimaryButton: FC<PropsWithChildren<IPrimaryButton>> = ({ children, onPress }) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
         style={({ pressed }) => (pressed ? [styles.buttonInnerContainer, styles.pressed] : styles.buttonInnerContainer)}
-        onPress={pressHandle}
-        android_ripple={{ color: "#640233" }}>
+        onPress={onPress}
+        android_ripple={{ color: Colors.primary600 }}>
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>
   );
 };
-
-export { PrimaryButton };
 
 const styles = StyleSheet.create({
   buttonOuterContainer: {
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    backgroundColor: "#72063c",
+    backgroundColor: Colors.primary500,
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
