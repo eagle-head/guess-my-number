@@ -40,6 +40,7 @@ const StartGame: FC<PropsWithChildren<IStartGame>> = ({ onPickNumber }) => {
       <Card>
         <InstructionText>Enter a number</InstructionText>
         <TextInput
+          accessibilityRole="search"
           style={styles.inputNumber}
           maxLength={2}
           keyboardType="number-pad"

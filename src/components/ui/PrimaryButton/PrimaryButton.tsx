@@ -11,6 +11,7 @@ export const PrimaryButton: FC<PropsWithChildren<IPrimaryButton>> = ({ children,
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
+        accessibilityRole="button"
         style={({ pressed }) => (pressed ? [styles.buttonInnerContainer, styles.pressed] : styles.buttonInnerContainer)}
         onPress={onPress}
         android_ripple={{ color: Colors.primary600 }}>

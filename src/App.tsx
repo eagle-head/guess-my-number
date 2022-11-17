@@ -42,6 +42,7 @@ const App: FC<PropsWithChildren> = () => {
       <StatusBar barStyle={"light-content"} />
       <LinearGradient colors={[Colors.primary700, Colors.accent500]} style={styles.rootScreen}>
         <ImageBackground
+          accessibilityRole="image"
           source={require("./assets/images/background.png")}
           resizeMode="cover"
           style={styles.rootScreen}

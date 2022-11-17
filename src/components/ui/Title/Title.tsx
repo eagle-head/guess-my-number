@@ -2,7 +2,11 @@ import React, { FC, type PropsWithChildren } from "react";
 import { Platform, StyleSheet, Text } from "react-native";
 
 export const Title: FC<PropsWithChildren> = ({ children }) => {
-  return <Text style={styles.title}>{children}</Text>;
+  return (
+    <Text accessibilityRole="header" style={styles.title}>
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({

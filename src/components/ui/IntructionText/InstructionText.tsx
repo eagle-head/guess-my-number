@@ -7,7 +7,11 @@ interface IText {
 }
 
 const InstructionText: FC<PropsWithChildren<IText>> = ({ children, style }) => {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+  return (
+    <Text accessibilityRole="header" style={[styles.text, style]}>
+      {children}
+    </Text>
+  );
 };
 
 export { InstructionText };
