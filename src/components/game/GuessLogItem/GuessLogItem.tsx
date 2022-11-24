@@ -10,8 +10,8 @@ interface IGuessLogItem {
 const GuessLogItem: FC<PropsWithChildren<IGuessLogItem>> = ({ roundNumber, guess }) => {
   return (
     <View style={styles.listItem}>
-      <Text>#{roundNumber}</Text>
-      <Text>Opponent's Guess: {guess}</Text>
+      <Text accessibilityRole="text">#{roundNumber}</Text>
+      <Text accessibilityRole="text">Opponent's Guess: {guess}</Text>
     </View>
   );
 };

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const Colors = {
   primary500: "#72063c",
   primary600: "#640233",

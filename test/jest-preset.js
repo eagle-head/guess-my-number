@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const ReactNativePreset = require("react-native/jest-preset");
 
 module.exports = Object.assign({}, ReactNativePreset, {

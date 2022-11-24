@@ -5,16 +5,18 @@ import Colors from "../../../constants/colors";
 
 interface IPrimaryButton {
   onPress: ((event: GestureResponderEvent) => void) | null | undefined;
+  press?: boolean;
 }
 
-export const PrimaryButton: FC<PropsWithChildren<IPrimaryButton>> = ({ children, onPress }) => {
+export const PrimaryButton: FC<PropsWithChildren<IPrimaryButton>> = ({ children, onPress, press }) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
         accessibilityRole="button"
         style={({ pressed }) => (pressed ? [styles.buttonInnerContainer, styles.pressed] : styles.buttonInnerContainer)}
         onPress={onPress}
-        android_ripple={{ color: Colors.primary600 }}>
+        android_ripple={{ color: Colors.primary600 }}
+        testOnly_pressed={press}>
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>

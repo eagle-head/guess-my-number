@@ -6,4 +6,6 @@ module.exports = {
   moduleDirectories: ["<rootDir>/node_modules", "<rootDir>/test"],
   transform: {},
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  resetMocks: true,
+  restoreMocks: true,
 };

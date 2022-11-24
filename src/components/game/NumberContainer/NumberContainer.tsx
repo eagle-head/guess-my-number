@@ -5,7 +5,9 @@ import Colors from "../../../constants/colors";
 export const NumberContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
     <View style={styles.conatiner}>
-      <Text style={styles.numberText}>{children}</Text>
+      <Text accessibilityRole="text" style={styles.numberText}>
+        {children}
+      </Text>
     </View>
   );
 };
